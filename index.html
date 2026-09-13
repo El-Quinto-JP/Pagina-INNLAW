@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="icono-img.png" type="image/png">
+<title>INNLAW GROUP</title>
+<meta name="description" content="Asesoría jurídica en Yopal, Casanare. Representación judicial, restitución de tierras, registro de marcas y constitución de sociedades.">
+
+<meta property="og:title" content="INNLAW GROUP - Asesoría Jurídica">
+<meta property="og:description" content="Compromiso, ética y estrategia legal. Litigio y asesoría empresarial en Yopal, Casanare.">
+<meta property="og:image" content="https://www.innlaw.com.co//icono-img.png">
+<meta property="og:url" content="https://www.innlaw.com.co/icono-img">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-deep:#0a1a2b;
+    --navy:#1e3a5f;
+    --navy-dark:#16324f;
+    --gold:#c9a04e;
+    --bg:#f4f6f9;
+    --ink:#1e2a3a;
+    --muted:#6c7a8a;
+    --line:#dce3ec;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{ overflow-x:hidden; scroll-behavior:smooth; }
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter', 'Segoe UI', sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{ 
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    font-weight: 600;
+  }
+
+
+
+  a{ color:inherit; }
+  .container{ max-width:1100px; margin:0 auto; padding:0 20px; }
+
+  /* CORTINA */
+  .cortina{
+    position:fixed; inset:0; background:var(--navy);
+    z-index:999; display:flex; align-items:center; justify-content:center;
+    animation:subirCortina 1.2s ease-in-out forwards; animation-delay:.6s;
+  }
+  .cortina span{
+    color:white; 
+    font-family:'Playfair Display', serif;
+    font-size:1.5rem; letter-spacing:3px; text-transform:uppercase;
+    opacity:0; animation:aparecerTexto .6s ease-in forwards;
+  }
+  @keyframes aparecerTexto{ to{ opacity:1; } }
+  @keyframes subirCortina{ to{ transform:translateY(-100%); visibility:hidden; } }
+  @media (prefers-reduced-motion: reduce){
+    .cortina{ animation:none; display:none; }
+  }
+
+  /* NAV */
+  .navbar{
+    background:var(--navy-deep);
+    position:sticky; top:0; z-index:500;
+  }
+  .navbar .container{
+    max-width:none;
+    max-height: 65px;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 40px;
+  }
+  @media (max-width:600px){
+    .navbar .container{ padding:12px 20px; }
+  }
+  .nav-logo{
+    height:125px;
+    width:125px;
+    max-width:300px;
+    object-fit:contain;
+    flex-shrink:0;
+    display:block;
+    filter:brightness(0) invert(1);
+  }
+  @media (max-width:600px){
+    .nav-logo{ height:125px; max-width:220px; }
+  }
+  .nav-links{
+    list-style:none; display:flex; gap:18px; align-items:center;
+    flex-shrink:1; min-width:0;
+  }
+  .nav-links a{
+    color:#c7d3e0; text-decoration:none; font-size:.88rem; font-weight:500;
+    transition:color .2s ease; white-space:nowrap;
+  }
+  .nav-links a:hover, .nav-links a:focus-visible{ color:var(--gold); }
+  .nav-cta{
+    background:var(--gold); color:var(--navy-deep) !important;
+    padding:9px 16px; border-radius:6px; font-weight:600 !important;
+    white-space:nowrap; flex-shrink:0;
+  }
+  .nav-toggle{
+    display:none; background:none; border:none; color:white;
+    font-size:1.4rem; cursor:pointer; flex-shrink:0;
+  }
+  @media (max-width:1000px){
+    .nav-links{
+      position:absolute; top:100%; left:0; right:0;
+      background:var(--navy-deep); flex-direction:column; gap:0;
+      max-height:0; overflow:hidden; transition:max-height .3s ease;
+    }
+    .nav-links.open{ max-height:320px; }
+    .nav-links li{ width:100%; }
+    .nav-links a{ display:block; padding:14px 24px; border-top:1px solid #22405f; }
+    .nav-cta{ margin:14px 24px; text-align:center; display:block; }
+    .nav-toggle{ display:block; }
+  }
+
+  /* HERO */
+  header.hero{
+    background:linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color:white;
+    min-height:min(100vh);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+    padding:60px 20px;
+    margin-bottom:40px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+  }
+
+  .hero-video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:0;
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(30,58,95,.88) 0%, rgba(10,26,43,.92) 100%);
+  z-index:1;
+}
+header.hero .container{
+  position:relative;
+  z-index:2;
+}
+
+  .logo-placeholder{
+    background:var(--navy-dark); width:180px; height:70px;
+    margin:0 auto 26px auto; display:flex; align-items:center; justify-content:center;
+    border-radius:8px; border:2px dashed #8899aa; color:#aabbcc;
+    font-weight:bold; font-size:13px; text-transform:uppercase;
+  }
+
+  .logo-hero-wrap{
+    position:relative;
+    display:inline-block;
+    margin:0 auto 22px auto;
+  }
+  .logo-hero-wrap::before{
+    content:"";
+    position:absolute; inset:-48px;
+    background:radial-gradient(circle, rgba(201,160,78,.28) 0%, rgba(201,160,78,0) 72%);
+    z-index:0;
+    pointer-events:none;
+  }
+  .logo-hero{
+    position:relative; z-index:1;
+    display:block;
+    margin:0 auto;
+    max-height:235px;
+    width:auto;
+    height:auto;
+    max-width:min(80%, 420px);
+    object-fit:contain;
+    filter:brightness(0) invert(1) drop-shadow(0 6px 18px rgba(0,0,0,.35));
+    margin-bottom:35px ;
+    opacity: 85%;
+  }
+  @media (max-width:600px){
+    .logo-hero{ max-height:235px; }
+    .logo-hero-wrap{ margin-bottom:35px; }
+  }
+
+  header.hero h1{
+    font-size:2.6rem; font-weight:700; max-width:760px; margin:0 auto 16px;
+    letter-spacing:.5px;
+  }
+  @media (max-width:600px){
+    header.hero h1{ font-size:1.9rem; }
+  }
+  header.hero .subtitle{
+    color:#b0c4de; font-size:1.05rem; max-width:560px; margin:0 auto 30px;
+  }
+  .hero-actions{
+    display:flex; gap:14px; justify-content:center; flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-block; padding:13px 26px; border-radius:6px;
+    font-weight:600; text-decoration:none; font-size:.95rem;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{ transform:translateY(-1px); }
+  .btn-gold{ background:var(--gold); color:var(--navy-deep); }
+  .btn-outline{ border:1px solid #4d6c8f; color:#e6edf5; }
+
+  /* SEAL / SIGNATURE ELEMENT */
+  .seal{
+    width:87px; 
+    height:87px;
+    margin:0 auto 22px;
+    border:1.5px solid var(--gold); border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--gold); font-family:'Inter', 'Segoe UI', sans-serif;
+    font-size:0.55rem; letter-spacing:2px; text-align:center; line-height:1.3;
+    position:relative;
+  }
+  .seal::before{
+    content:"";
+    position:absolute; inset:6px;
+    border:1px solid rgba(201,160,78,.5); border-radius:50%;
+
+  }
+
+  /* Nostros */
+.titulo-logo {
+  border-left: 6px solid var(--gold);
+  padding-left: 15px;
+  margin-bottom: 8px;
+  }
+
+  .logo-nosotros {
+  display: block;
+  width: auto;
+  max-height: 65px;
+  height: auto;
+  object-fit: contain;
+  transform: translateY(5px);   /* sube el logo visualmente */
+  margin-bottom: 10px;          /* reduce el espacio que ocupa abajo */
+}
+
+#nosotros {
+  position: relative;
+  overflow: visible; /* por si acaso */
+  }
+
+.nosotros-texto {padding-right: auto;}
+.nosotros-texto p{
+  text-align:justify;
+  hyphens:none
+}
+  
+
+  /* SECTIONS */
+  main .container{ padding:50px 20px 20px; }
+  section{
+    background:white; padding:34px 34px; margin-bottom:26px;
+    border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,.05);
+  }
+  @media (max-width:600px){
+    section{ padding:26px 20px; }
+  }
+  .section-eyebrow{
+    color:var(--gold); font-size:.78rem; font-weight:600;
+    letter-spacing:2px; text-transform:uppercase; margin-bottom:8px;
+  }
+  h2{
+    color:var(--navy-deep); border-left:6px solid var(--gold);
+    padding-left:15px; margin-bottom:20px; font-size:1.75rem;
+  }
+  @media (max-width:600px){
+    h2{ font-size:1.4rem; }
+  }
+  section > p{ font-size:1.05rem; color:#33465c; max-width:70ch; }
+
+  /* AREAS */
+  .areas-grid{
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+    gap:16px; list-style:none;
+  }
+  .areas-grid li{
+    background:var(--bg); border:1px solid var(--line); border-radius:10px;
+    padding:20px 18px;
+  }
+  .areas-grid .area-title{
+    font-weight:600; color:var(--navy-deep); margin-bottom:4px; display:block;
+  }
+  .areas-grid .area-desc{ font-size:.88rem; color:var(--muted); }
+
+ 
+
+  /* TESTIMONIOS */
+  .testimonios-grid{
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+  gap:20px;
+  align-items:start;
+}
+ .testimonio{
+  background:var(--bg); border-radius:10px; padding:22px 20px;
+  border:1px solid var(--line);
+  transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+   touch-action: manipulation;
+}
+.testimonio:hover{
+  transform:translateY(-6px);
+  box-shadow:0 14px 28px rgba(10,26,43,.15);
+  border-color:var(--gold);
+}
+.testimonio.abierto {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(10,26,43,.15);
+  border-color: var(--gold);
+}
+.testimonio.abierto .testimonio-avatar {
+  background: var(--gold);
+  transform: scale(1.08);
+}
+.testimonio-avatar{
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  background:var(--navy);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:14px;
+  transition:transform .25s ease, background .25s ease;
+}
+.testimonio:hover .testimonio-avatar{
+  background:var(--gold);
+  transform:scale(1.08);
+}
+.testimonio-avatar svg{
+  width:26px;
+  height:26px;
+  fill:white;
+}
+  .testimonio p{
+  font-size:.95rem; color:#33465c; font-style:italic;
+  max-height:0;
+  opacity:0;
+  margin:0;
+  overflow:hidden;
+  transition:max-height .45s ease, opacity .35s ease, margin-bottom .45s ease;
+  hyphens:none
+}
+
+/* Para móvil: mostrar texto cuando tenga clase .abierto */
+.testimonio.abierto p {
+  max-height: 420px;
+  opacity: 1;
+  margin-bottom: 14px;
+  
+}
+.testimonio:hover p{
+  max-height:420px;
+  opacity:1;
+  margin-bottom:14px;
+}
+  .testimonio-autor{ font-size:.85rem; font-weight:600; color:var(--navy-deep); }
+  .testimonio-caso{ font-size:.8rem; color:var(--muted); }
+
+  .redes-sociales{
+  display:flex;
+  gap:12px;
+  margin-top:16px;
+}
+.redes-sociales a{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background:var(--navy);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:background .2s ease, transform .2s ease;
+}
+.redes-sociales a:hover{
+  background:var(--gold);
+  transform:translateY(-2px);
+}
+.redes-sociales svg{
+  width:20px;
+  height:20px;
+  fill:white;
+}
+
+.contacto-info iframe{
+  display:block;
+  width:100%;
+  height:260px;
+  margin-top:24px;
+  border:0;
+  border-radius:10px;
+}
+
+  /* CONTACTO */
+  .contacto-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:34px;
+  }
+
+  @media (max-width:700px){ .contacto-grid{ grid-template-columns:1fr; } }
+  .contacto-info p{ margin-bottom:10px; font-size:.98rem; }
+  .contacto-info strong{ color:var(--navy-deep); }
+  .form-placeholder{
+    border:1px dashed #c3cede; border-radius:10px; padding:24px;
+    background:var(--bg);
+  }
+  .form-placeholder .campo{
+  background:white; border:1px solid var(--line); border-radius:6px;
+  padding:12px 14px; margin-bottom:12px; color:var(--ink); font-size:.9rem;
+  width:100%;
+  font-family:inherit;
+  outline:none;
+}
+  .form-placeholder .btn-gold{ width:100%; text-align:center; border:none; cursor:pointer; }
+  .form-note{ margin-top:15px; color:var(--muted); font-style:italic; font-size:.85rem; }
+
+  /* FOOTER */
+  footer{
+    background:var(--navy-deep); color:#9fb0c4;
+    padding:34px 0 24px; margin-top:10px;
+  }
+  footer .container{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px;
+    padding-bottom:20px; border-bottom:1px solid #1f3652;
+  }
+  footer h4{ color:white; font-family:'Playfair Display', serif; font-size:1rem; margin-bottom:10px; }
+  footer ul{ list-style:none; font-size:.88rem; }
+  footer li{ margin-bottom:6px; }
+  footer a{ text-decoration:none; color:#9fb0c4; }
+  footer a:hover{ color:var(--gold); }
+  .footer-bottom{
+    text-align:center; padding-top:16px; font-size:.82rem; color:#7386a0;
+  }
+
+  /* WHATSAPP */
+  .whatsapp-flotante{
+    position:fixed; bottom:30px; right:30px; height:60px; width:60px;
+    background-color:var(--navy); border-radius:30px; display:flex;
+    flex-direction:row-reverse; align-items:center; justify-content:flex-start;
+    overflow:hidden; text-decoration:none; box-shadow:0 4px 14px rgba(0,0,0,.25);
+    transition:width .35s ease; z-index:998;
+  }
+  .whatsapp-flotante:hover{ width:190px; }
+  .whatsapp-flotante .icono{
+    min-width:60px; height:60px; display:flex; align-items:center;
+    justify-content:center; flex-shrink:0;
+  }
+  .whatsapp-flotante .icono svg{ width:30px; height:30px; fill:#e1e9f1; }
+  .whatsapp-flotante .texto{
+    color:#e1e9f1; font-weight:600; font-size:.95rem; white-space:nowrap;
+    opacity:0; transition:opacity .2s ease .15s; padding-left:6px;
+  }
+  .whatsapp-flotante:hover .texto{ opacity:1; }
+  @media (max-width:480px){
+    .whatsapp-flotante{ bottom:20px; right:20px; height:52px; width:52px; }
+    .whatsapp-flotante .icono{ min-width:52px; height:52px; }
+    .whatsapp-flotante .icono svg{ width:26px; height:26px; }
+  }
+
+  /* BOTON INICIO */
+  .home-flotante{
+    position:fixed; bottom:30px; right:104px;
+    height:52px; width:52px;
+    background-color:var(--navy);
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 4px 14px rgba(0,0,0,.25);
+    text-decoration:none;
+    opacity:0; visibility:hidden; transform:translateY(10px);
+    transition:opacity .25s ease, transform .25s ease, background-color .2s ease;
+    z-index:998;
+  }
+  .home-flotante.visible{ opacity:1; visibility:visible; transform:translateY(0); }
+  .home-flotante:hover{ background-color:var(--navy-dark); }
+  .home-flotante svg{ width:22px; height:22px; fill:#e1e9f1; }
+  @media (max-width:480px){
+    .home-flotante{ right:auto; left:20px; bottom:20px; height:46px; width:46px; }
+    .home-flotante svg{ width:19px; height:19px; }
+  }
+
+  /* Estilos para el acordeón */
+.area-acordeon {
+  cursor: pointer;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px 18px;
+  transition: background 0.2s;
+}
+.area-acordeon:hover {
+  background: #e8ecf2;
+}
+
+.area-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  color: var(--navy-deep);
+  user-select: none;
+}
+
+.area-icon {
+  transition: transform 0.3s ease;
+  font-size: 0.8rem;
+  color: var(--gold);
+}
+
+.area-acordeon.activo .area-icon {
+  transform: rotate(180deg);
+}
+
+.area-sublista {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  padding-left: 10px;
+  border-left: 2px solid var(--gold);
+}
+
+.area-acordeon.activo .area-sublista {
+  max-height: 400px; /* suficiente para mostrar todos los items */
+  padding: 8px 0 4px 10px;
+}
+
+.area-sublista li {
+  padding: 6px 0 6px 10px;
+  font-size: 0.92rem;
+  color: var(--ink);
+  border-bottom: 1px dashed var(--line);
+}
+
+.area-sublista li:last-child {
+  border-bottom: none;
+}
+
+/* Ajuste en móvil para que no se rompa */
+@media (max-width: 600px) {
+  .area-acordeon {
+    padding: 14px 16px;
+  }
+  .area-sublista li {
+    font-size: 0.85rem;
+  }
+}
+
+.consentimiento{
+  display:flex;
+  align-items:flex-start;
+  gap:8px;
+  font-size:.82rem;
+  color:var(--muted);
+  margin-bottom:14px;
+  line-height:1.4;
+}
+.consentimiento input{
+  margin-top:3px;
+  flex-shrink:0;
+}
+.consentimiento a{
+  color:var(--navy);
+  text-decoration:underline;
+}
+
+.politica-datos{
+  margin-top:20px;
+  font-size:.85rem;
+  color:var(--muted);
+}
+.politica-datos summary{
+  cursor:pointer;
+  font-weight:600;
+  color:var(--navy-deep);
+  margin-bottom:8px;
+}
+.politica-datos p{
+  margin-bottom:10px;
+  text-align: justify;
+  hyphens: none;
+}
+</style>
+</head>
+<body id="top">
+
+  <div class="cortina" aria-hidden="true">
+    <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;">
+      <img src="logo-firma.png" alt="Logo del Estudio Jurídico" style="max-width:250px; width:70%; height:auto; display:block; opacity:0; filter:brightness(0) invert(1); animation:aparecerTexto .6s ease-in forwards;">
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="container">
+      <img src="logo-barnav.png" alt="Estudio Jurídico" class="nav-logo">
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#areas">Áreas</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a class="nav-cta" href="https://wa.me/573202199893" target="_blank">Agendar consulta</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+  <source src="video-hero.mp4" type="video/mp4">
+</video>
+<div class="hero-overlay"></div>
+    <div class="container">
+      <div class="logo-hero-wrap">
+        <img src="logo-firma.png" alt="Logo del Estudio Jurídico" class="logo-hero">
+      </div>
+      <div class="seal">SELLO<br>DE<br>CONFIANZA</div>
+      <h1>Innovación, Confianza y Crecimiento</h1>
+      <p class="subtitle">Asesoría jurídica integral con más de 10 años de experiencia defendiendo los intereses de nuestros clientes.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="https://wa.me/573202199893">Agendar consulta</a>
+        <a class="btn btn-outline" href="#areas">Ver áreas de práctica</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <!-- NOSOTROS -->
+      <section id="nosotros">
+  <span class="section-eyebrow">Quiénes somos</span>
+  
+  <!-- Título con logo y barra dorada -->
+   <div class="nosotros-texto">
+  <div class="titulo-logo">
+    <img src="logo-barnav2.png" alt="Logo del Estudio" class="logo-nosotros">
+  </div>
+        <p>
+          Contamos con experiencia en asesoría empresarial y litigio. Representamos a nuestros clientes en procesos civiles, familiares, contencioso administrativos y agrarios. y protección al consumidor, en procesos de restitución de tierras y representación de víctimas.
+           Por otro lado, asesoramos a emprendedores y a empresas en la constitución de sociedades, en la elaboración de contratos civiles y mercantiles, ofreciendo soluciones jurídicas completas y adaptadas a las necesidades de cada caso.
+
+             </p>
+</div>
+
+        
+      </section>
+
+      <!-- AREAS -->
+      <section id="areas">
+        <span class="section-eyebrow">Servicios</span>
+        <h2>Áreas De Práctica</h2>
+        <ul class="areas-grid">
+  <!-- Representación Judicial (ACORDEÓN) -->
+  <li class="area-acordeon">
+    <div class="area-header" data-target="sub-representacion">
+      <span class="area-title">⚖️ Representación Judicial</span>
+      <span class="area-icon">▼</span>
+    </div>
+    <ul class="area-sublista" id="sub-representacion">
+      <li>Procesos civiles y de familia</li>
+      <li>Procesos contencioso administrativos</li>
+      <li>Representación de víctimas</li>
+      <li>Procesos agrarios</li>
+      <li>Protección al consumidor</li>
+      <li>Procesos de Restitución de Tierras (Ley 1448 de 2011)</li>
+    </ul>
+<!-- Consultoria -->
+     <li class="area-acordeon">
+    <div class="area-header" data-target="sub-representacion">
+      <span class="area-title">⚖️Consultoria</span>
+      <span class="area-icon">▼</span>
+    </div>
+    <ul class="area-sublista" id="sub-representacion">
+      <li>Constitución de sociedades</li>
+      <li>Asesoría en registro de marcas</li>
+      <li>Elaboración de contratos civiles y comerciales</li>
+      <li>Asesoría en emprendimiento</li>
+    </ul>
+
+  
+  </li>
+
+ 
+</ul>
+          
+        </ul>
+      </section>
+
+      
+
+      <!-- TESTIMONIOS -->
+      <section id="testimonios">
+        <span class="section-eyebrow">Casos de éxito</span>
+        <h2>Lo Que Dicen Nuestros Clientes</h2>
+      <div class="testimonios-grid">
+  <div class="testimonio">
+    <div class="testimonio-avatar">
+      <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.4c-3.3 0-9.8 1.6-9.8 4.9v2.5h19.6v-2.5c0-3.3-6.5-4.9-9.8-4.9z"/></svg>
+    </div>
+    <p>"Necesitaba registrar mi marca de forma segura y evitar errores durante el proceso. El equipo realizó el estudio de antecedentes, optimizó los costos del trámite y me acompañó en cada etapa hasta lograr el registro de mi marca. Su asesoría fue clara, eficiente y profesional."</p>
+    <div class="testimonio-autor">Nestor Alberto Tirano Bedoya</div>
+    <div class="testimonio-caso">Derecho de Propiedad Intelectual · Registro Marcario SIC</div>
+  </div>
+
+  <div class="testimonio">
+    <div class="testimonio-avatar">
+      <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.4c-3.3 0-9.8 1.6-9.8 4.9v2.5h19.6v-2.5c0-3.3-6.5-4.9-9.8-4.9z"/></svg>
+    </div>
+    <p>"Buscaba un acompañamiento jurídico profesional para mi proceso de restitución de tierras y encontré un equipo con amplio conocimiento en trámites relacionados con víctimas. Me brindaron orientación clara, acompañamiento permanente y la confianza de estar en buenas manos. Además, también me han asesorado en el registro de mi marca, demostrando un servicio integral y comprometido."</p>
+    <div class="testimonio-autor">Juan Erasmo Zambrano Mejía</div>
+    <div class="testimonio-caso">Proceso de Restitución de Tierras · Ley 1448 de 2011</div>
+  </div>
+
+  <div class="testimonio">
+    <div class="testimonio-avatar">
+      <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.4c-3.3 0-9.8 1.6-9.8 4.9v2.5h19.6v-2.5c0-3.3-6.5-4.9-9.8-4.9z"/></svg>
+    </div>
+    <p>"Teníamos la necesidad de asociarnos para desarrollar proyectos con fines no lucrativos, pero desconocíamos cuál era la figura jurídica más adecuada. El equipo legal de InnLaw analizó nuestras necesidades, estructuró el modelo asociativo más conveniente y nos acompañó en cada etapa hasta lograr la constitución y el registro de nuestra asociación ante la Cámara de Comercio. Su acompañamiento fue profesional, oportuno y nos brindó la confianza necesaria durante todo el proceso."</p>
+    <div class="testimonio-autor">Lelis Arnovis Ángel Girón</div>
+    <div class="testimonio-caso">Representante Legal Suplente – ASOFINPET · Constitución de Asociación sin Ánimo de Lucro</div>
+  </div>
+</div>
+      </section>
+
+      <!-- CONTACTO -->
+      <section id="contacto">
+        <span class="section-eyebrow">Hablemos</span>
+        <h2>Contacto</h2>
+        <div class="contacto-grid">
+          <div class="contacto-info">
+            <p><strong>Teléfono:</strong> +57 320 219 9893</p>
+            <p><strong>Correo:</strong> info@innlaw.com.co</p>
+            <p><strong>Dirección:</strong> Carrera 13 a 27-22 Yopal, Casanare</p>
+            <p><strong>Horario:</strong> Lunes a viernes, 8:00 a.m. – 6:00 p.m.</p>
+            <div class="redes-sociales">
+  <a href="https://www.instagram.com/innlaw.group/" target="_blank" aria-label="Instagram">
+    <svg viewBox="0 0 24 24"><path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10zm-5 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm5.5-3.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>
+  </a>
+  <a href="https://www.facebook.com/innlaw.group" target="_blank" aria-label="Facebook">
+    <svg viewBox="0 0 24 24"><path d="M13 22v-9h3l1-4h-4V7c0-1.1.3-1.9 2-1.9h2V1.1C16.6 1 15.5 1 14.2 1 11.4 1 9.5 2.7 9.5 5.7V9H6.5v4h3v9h3.5z"/></svg>
+  </a>
+  <a href="https://www.youtube.com/@INNLAWGROUP" target="_blank" aria-label="YouTube">
+    <svg viewBox="0 0 24 24"><path d="M23 12s0-3.6-.46-5.3a2.9 2.9 0 0 0-2-2C18.9 4.2 12 4.2 12 4.2s-6.9 0-8.54.5a2.9 2.9 0 0 0-2 2C1 8.4 1 12 1 12s0 3.6.46 5.3a2.9 2.9 0 0 0 2 2c1.64.5 8.54.5 8.54.5s6.9 0 8.54-.5a2.9 2.9 0 0 0 2-2C23 15.6 23 12 23 12zM9.75 15.5v-7l6 3.5-6 3.5z"/></svg>
+  </a>
+</div>
+            <iframe
+  src="https://www.google.com/maps?q=Carrera 13 a 27-22 Yopal, Casanare&output=embed"
+  loading="lazy"
+  title="Ubicación del Estudio Jurídico">
+</iframe>
+          </div>
+          <form class="form-placeholder" action="https://formspree.io/f/xjybbdal" method="POST">
+  <input class="campo" type="text" name="nombre" placeholder="Nombre completo" required>
+  <input class="campo" type="email" name="correo" placeholder="Correo electrónico" required>
+  <textarea class="campo" name="mensaje" placeholder="Mensaje" rows="4" required></textarea>
+  <label class="consentimiento">
+    <input type="checkbox" required>
+    Autorizo el tratamiento de mis datos personales conforme a la
+    <a href="#politica-datos">Política de Tratamiento de Datos</a>.
+  </label>
+  <button class="btn btn-gold" type="submit">Enviar mensaje</button>
+  <p class="form-note">Te responderemos a la brevedad por correo.</p>
+</form>
+        </div>
+<!-- CONTACTO politica de privacidad -->
+ <details id="politica-datos" class="politica-datos">
+    <summary>Política de Tratamiento de Datos Personales</summary>
+    <p>
+      <strong>Estudio Jurídico INNLAW GROUP</strong>, en calidad de responsable
+      del tratamiento, informa que los datos personales recolectados a través de este formulario
+      (nombre, correo electrónico y mensaje) serán utilizados exclusivamente para dar respuesta a su
+      solicitud de contacto o asesoría legal, y no serán compartidos, vendidos ni cedidos a terceros
+      sin su autorización.
+    </p>
+    <p>
+      De acuerdo con la Ley 1581 de 2012 y el Decreto 1377 de 2013, usted tiene derecho a conocer,
+      actualizar, rectificar y solicitar la supresión de sus datos personales, así como a revocar
+      esta autorización en cualquier momento, escribiendo al correo
+      <strong>info@innlaw.com.co</strong>.
+    </p>
+  </details>
+
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>
+        <img src="logo-pide.png" alt="Logo del Estudio Jurídico" class="nav-logo">
+        <ul><li>Compromiso, ética y estrategia legal.</li></ul>
+      </div>
+      <div>
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#areas">Áreas de práctica</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li>+57 320 219 9893</li>
+          <li>info@innlaw.com.co</li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-bottom">&copy; 2026 INNLAW GROUP. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- BOTON INICIO -->
+  <a href="#top" id="homeBtn" class="home-flotante" aria-label="Volver al inicio">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 3.2 2 11h3v9h6v-6h2v6h6v-9h3L12 3.2zm0 2.66 6 5.25V18h-2v-6H8v6H6v-6.89l6-5.25z"/>
+    </svg>
+  </a>
+
+  <!-- WHATSAPP -->
+  <a href="https://wa.me/573202199893" target="_blank" class="whatsapp-flotante" aria-label="Agendar cita por WhatsApp">
+    <span class="icono">
+      <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.625.82 5.062 2.207 7.067L4 29l7.133-2.168A11.94 11.94 0 0 0 16 27c6.628 0 12-5.373 12-12S22.629 3 16.001 3zm.001 21.6c-1.98 0-3.87-.548-5.52-1.583l-.395-.238-4.243 1.29 1.267-4.14-.256-.412A9.565 9.565 0 0 1 5.4 15c0-5.294 4.307-9.6 9.6-9.6 5.294 0 9.6 4.306 9.6 9.6s-4.306 9.6-9.6 9.6zm5.267-7.19c-.288-.144-1.703-.84-1.967-.936-.264-.096-.456-.144-.648.144-.192.288-.744.936-.912 1.128-.168.192-.336.216-.624.072-.288-.144-1.217-.449-2.318-1.432-.857-.764-1.436-1.708-1.604-1.996-.168-.288-.018-.443.126-.587.129-.129.288-.336.432-.504.144-.168.192-.288.288-.48.096-.192.048-.36-.024-.504-.072-.144-.648-1.564-.888-2.144-.234-.563-.472-.487-.648-.496-.168-.008-.36-.01-.552-.01-.192 0-.504.072-.768.36-.264.288-1.008.984-1.008 2.4 0 1.416 1.032 2.784 1.176 2.976.144.192 2.03 3.1 4.92 4.347.688.297 1.224.474 1.643.607.69.22 1.318.189 1.814.115.553-.083 1.703-.696 1.943-1.369.24-.672.24-1.248.168-1.369-.072-.12-.264-.192-.552-.336z"/>
+      </svg>
+    </span>
+    <span class="texto">Agendar cita</span>
+  </a>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Desplazamiento suave dentro de la misma página para todos los enlaces internos (#id)
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    const targetId = link.getAttribute('href');
+    if (targetId.length < 2) return; // href="#" (ej. botón de formulario)
+    const target = document.querySelector(targetId);
+    if (target) {
+      e.preventDefault();
+      if (target.tagName === 'DETAILS') {
+        target.open = true;   // ← nuevo: si es un <details>, lo abre
+      }
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+    // Botón "volver al inicio": solo visible después de bajar un poco
+    const homeBtn = document.getElementById('homeBtn');
+    window.addEventListener('scroll', () => {
+      homeBtn.classList.toggle('visible', window.scrollY > 400);
+    });
+
+    // Acordeón de "Representación Judicial"
+document.querySelectorAll('.area-acordeon').forEach(item => {
+  const header = item.querySelector('.area-header');
+  header.addEventListener('click', function(e) {
+    e.stopPropagation();
+    item.classList.toggle('activo');
+  });
+});
+
+// Toggle para testimonios: manejo específico para móvil y escritorio
+document.querySelectorAll('.testimonio').forEach(function(t) {
+  let touchHandled = false;
+
+  t.addEventListener('touchstart', function(e) {
+    // Prevenir el comportamiento por defecto (scroll, zoom)
+    e.preventDefault();
+    // Alternar la clase 'abierto' directamente
+    this.classList.toggle('abierto');
+    touchHandled = true;
+  });
+
+  t.addEventListener('click', function(e) {
+    // Si ya se manejó con touchstart, no repetir
+    if (touchHandled) {
+      touchHandled = false;
+      return;
+    }
+    this.classList.toggle('abierto');
+  });
+});
+  </script>
+
+</body>
+</html>
